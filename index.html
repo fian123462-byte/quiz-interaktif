@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Master - Quiz Interaktif</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-shapes"></div>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">🎓</div>
+
+                <div>
+                    <h2>Quiz Master</h2>
+                    <p>Uji Pengetahuanmu di sini!</p>
+                </div>
+            </div>
+
+            <div class="score-card">
+                <div class="trophy">🏆</div>
+
+                <p>Skor Anda</p>
+
+                <h1 id="score">0</h1>
+
+                <span id="scoreMax">dari 1000</span>
+            </div>
+
+            <div class="progress-info">
+                <span>Progress</span>
+                <span id="progressText">0 / 10</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+
+            <h3 class="list-title">Daftar Soal</h3>
+
+            <div id="questionList" class="question-list"></div>
+
+            <button id="restartButton" class="restart-button">
+                ↻ &nbsp; Ulangi Quiz
+            </button>
+
+        </aside>
+
+        <!-- KONTEN UTAMA -->
+        <main class="main-content">
+
+            <div class="top-section">
+
+                <div class="category">
+                    <span>Kategori:</span>
+                    <strong>Pengetahuan dasar rekayasa perangkat lunak</strong>
+                </div>
+
+                <div class="timer">
+                    <span class="timer-icon">◷</span>
+
+                    <div>
+                        <small>Waktu</small>
+                        <h2 id="timer">05:00</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="step-progress">
+                <div id="stepFill"></div>
+            </div>
+
+            <!-- KARTU QUIZ -->
+            <section class="quiz-card" id="quizCard">
+
+                <div class="question-label" id="questionLabel">
+                    Soal 1 dari 10
+                </div>
+
+                <div class="question-heading">
+
+                    <div>
+                        <h1 id="question">
+                            Siap menguji pengetahuanmu?
+                        </h1>
+
+                        <p id="questionDescription">
+                            Pilih satu jawaban yang menurutmu benar.
+                        </p>
+                    </div>
+
+                    <div class="question-illustration" id="illustration">
+                        🌎
+                    </div>
+
+                </div>
+
+                <div id="answerContainer" class="answer-container"></div>
+
+                <div id="feedback" class="feedback"></div>
+
+                <div class="navigation">
+
+                    <button id="previousButton" class="previous-button">
+                        ← Sebelumnya
+                    </button>
+
+                    <button id="nextButton" class="next-button">
+                        Selanjutnya →
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- HASIL AKHIR -->
+            <section id="resultCard" class="result-card hidden">
+
+                <div class="result-icon">🎉</div>
+
+                <h1>Quiz Selesai!</h1>
+
+                <p>Ini hasil quiz yang berhasil kamu kerjakan.</p>
+
+                <div class="final-score">
+                    <span>Skor Akhir</span>
+                    <h2 id="finalScore">0</h2>
+                    <p id="resultMessage">Tetap semangat belajar!</p>
+                </div>
+
+                <div class="result-details">
+                    <div>
+                        <span>Jawaban Benar</span>
+                        <h3 id="correctCount">0</h3>
+                    </div>
+
+                    <div>
+                        <span>Jawaban Salah</span>
+                        <h3 id="wrongCount">0</h3>
+                    </div>
+                </div>
+
+                <button id="playAgainButton" class="next-button">
+                    ↻ Main Lagi
+                </button>
+
+            </section>
+
+            <footer>
+                <p>Quiz interaktif © 2026 | Project by alfian</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
