@@ -1,6 +1,6 @@
-/* =========================
-   RESET DASAR
-========================= */
+/* ============================
+   RESET DAN PENGATURAN DASAR
+============================ */
 
 * {
     margin: 0;
@@ -8,17 +8,23 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     color: #292929;
-    background-color: #70c5d1;
+    background: #70c5d1;
     overflow-x: hidden;
 }
 
-/* =========================
-   BACKGROUND BERMOTIF
-========================= */
+/* ============================
+   BACKGROUND
+============================ */
 
 .background-shapes {
     position: fixed;
@@ -30,42 +36,41 @@ body {
 
     background-image:
         linear-gradient(30deg, #ffffff12 25%, transparent 25%),
-        linear-gradient(150deg, #ffffff10 25%, transparent 25%),
-        linear-gradient(30deg, #ffffff0c 25%, transparent 25%),
-        linear-gradient(150deg, #ffffff0c 25%, transparent 25%);
+        linear-gradient(150deg, #ffffff10 25%, transparent 25%);
 
-    background-size: 110px 110px;
-    background-position:
-        0 0,
-        0 0,
-        55px 55px,
-        55px 55px;
+    background-size: 80px 80px;
 }
 
-/* =========================
+/* ============================
    LAYOUT UTAMA
-========================= */
+============================ */
 
 .app {
     display: grid;
-    grid-template-columns: 270px 1fr;
-    gap: 25px;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 22px;
+
+    width: 100%;
     max-width: 1500px;
     min-height: 100vh;
-    margin: auto;
-    padding: 25px;
+
+    margin: 0 auto;
+    padding: 22px;
 }
 
-/* =========================
+/* ============================
    SIDEBAR
-========================= */
+============================ */
 
 .sidebar {
     display: flex;
     flex-direction: column;
-    padding: 25px 20px;
-    color: white;
+
+    padding: 22px 18px;
+
+    color: #ffffff;
     background: #303030;
+
     border-radius: 12px;
     box-shadow: 0 5px 15px #00000015;
 }
@@ -73,75 +78,78 @@ body {
 .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 30px;
-}
+    gap: 10px;
 
-/* Hilangkan ikon dekoratif */
-.brand-icon {
-    display: none;
-}
-
-.brand h2 {
-    font-size: 22px;
-    margin-bottom: 6px;
-}
-
-.brand p {
-    font-size: 13px;
-    color: #d0d0d0;
-}
-
-/* =========================
-   KARTU SKOR
-========================= */
-
-.score-card {
-    padding: 25px 15px;
     margin-bottom: 25px;
-    text-align: center;
-    color: #333333;
-    background: #ffffff;
-    border-radius: 10px;
 }
 
+.brand-icon,
 .trophy {
     display: none;
 }
 
+.brand h2 {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.brand p {
+    color: #dddddd;
+    font-size: 12px;
+}
+
+/* ============================
+   KARTU SKOR
+============================ */
+
+.score-card {
+    padding: 22px 12px;
+    margin-bottom: 22px;
+
+    color: #333333;
+    text-align: center;
+
+    background: #ffffff;
+    border-radius: 9px;
+}
+
 .score-card p {
-    margin-bottom: 10px;
-    font-size: 15px;
+    font-size: 14px;
+    margin-bottom: 8px;
 }
 
 .score-card h1 {
-    margin-bottom: 5px;
     color: #70bd48;
-    font-size: 45px;
-    font-weight: 800;
+    font-size: 42px;
+    margin-bottom: 5px;
 }
 
 .score-card span {
     color: #777777;
-    font-size: 13px;
+    font-size: 12px;
 }
 
-/* =========================
+/* ============================
    PROGRESS
-========================= */
+============================ */
 
 .progress-info {
     display: flex;
     justify-content: space-between;
+    gap: 8px;
+
     margin-bottom: 10px;
-    font-size: 14px;
+
+    font-size: 13px;
     font-weight: bold;
 }
 
 .progress-bar {
     height: 8px;
-    margin-bottom: 25px;
     overflow: hidden;
+
+    margin-bottom: 24px;
+
     background: #555555;
     border-radius: 20px;
 }
@@ -149,42 +157,49 @@ body {
 #progressFill {
     width: 0%;
     height: 100%;
+
     background: #70bd48;
     border-radius: 20px;
+
     transition: width 0.3s ease;
 }
 
 .list-title {
-    margin-bottom: 15px;
-    font-size: 17px;
+    margin-bottom: 12px;
+    font-size: 16px;
 }
 
-/* =========================
+/* ============================
    DAFTAR SOAL
-========================= */
+============================ */
 
 .question-list {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 25px;
+
+    margin-bottom: 22px;
 }
 
 .question-number {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    padding: 10px 13px;
 
-    color: white;
+    width: 100%;
+    min-height: 38px;
+    padding: 8px 12px;
+
+    color: #ffffff;
     background: transparent;
 
     border: 1px solid #555555;
     border-radius: 7px;
 
+    font-size: 14px;
     cursor: pointer;
-    transition: 0.2s;
+
+    transition: background 0.2s;
 }
 
 .question-number:hover {
@@ -192,9 +207,8 @@ body {
 }
 
 .question-number.active {
-    color: white;
     background: #6f4290;
-    border-color: #9a70b6;
+    border-color: #b58dcc;
 }
 
 .question-number.answered {
@@ -204,6 +218,7 @@ body {
 .status-dot {
     width: 10px;
     height: 10px;
+
     background: #888888;
     border-radius: 50%;
 }
@@ -212,83 +227,86 @@ body {
     background: #70bd48;
 }
 
-/* =========================
+/* ============================
    TOMBOL ULANGI
-========================= */
+============================ */
 
 .restart-button {
     width: 100%;
-    margin-top: auto;
-    padding: 13px;
+    min-height: 44px;
 
-    color: white;
+    margin-top: auto;
+    padding: 12px;
+
+    color: #ffffff;
     background: #6f4290;
 
     border: none;
     border-radius: 7px;
 
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
 
     cursor: pointer;
-    transition: background 0.2s;
 }
 
 .restart-button:hover {
     background: #8154a1;
 }
 
-/* =========================
+/* ============================
    KONTEN UTAMA
-========================= */
+============================ */
 
 .main-content {
     display: flex;
     flex-direction: column;
+
     min-width: 0;
 }
 
-/* HEADER UNGU */
+/* HEADER */
 
 .top-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
 
-    padding: 20px 25px;
-    margin-bottom: 25px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
 
-    color: white;
+    color: #ffffff;
     background: #8b509e;
-    border-radius: 8px;
+
+    border-radius: 9px;
 }
 
 .category {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    font-size: 15px;
+    gap: 7px;
+
+    font-size: 14px;
 }
 
 .category strong {
     color: #ffffff;
-    font-weight: bold;
 }
 
-/* =========================
+/* ============================
    TIMER
-========================= */
+============================ */
 
 .timer {
     display: flex;
     align-items: center;
-    gap: 10px;
 
-    padding: 10px 15px;
+    padding: 10px 13px;
 
     color: #333333;
-    background: white;
+    background: #ffffff;
+
     border-radius: 7px;
 }
 
@@ -298,23 +316,23 @@ body {
 
 .timer small {
     color: #777777;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .timer h2 {
     margin-top: 3px;
-    font-size: 21px;
+    font-size: 19px;
 }
 
-/* =========================
+/* ============================
    PROGRESS BAGIAN ATAS
-========================= */
+============================ */
 
 .step-progress {
     width: 100%;
     height: 5px;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     overflow: hidden;
 
     background: #ffffff80;
@@ -324,18 +342,20 @@ body {
 #stepFill {
     width: 0%;
     height: 100%;
+
     background: #8b509e;
+
     transition: width 0.3s ease;
 }
 
-/* =========================
+/* ============================
    KARTU QUIZ
-========================= */
+============================ */
 
 .quiz-card,
 .result-card {
-    flex: 1;
-    padding: 35px;
+    min-width: 0;
+    padding: 30px;
 
     background: #ffffff;
     border-radius: 12px;
@@ -345,62 +365,67 @@ body {
 
 .question-label {
     display: inline-block;
-    padding: 9px 15px;
-    margin-bottom: 25px;
 
-    color: white;
+    padding: 9px 14px;
+    margin-bottom: 22px;
+
+    color: #ffffff;
     background: #8b509e;
+
     border-radius: 5px;
 
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
 }
 
 .question-heading {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .question-heading h1 {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+
     color: #333333;
 
-    font-size: clamp(24px, 3vw, 35px);
+    font-size: clamp(23px, 3vw, 34px);
     line-height: 1.4;
+
+    overflow-wrap: anywhere;
 }
 
 .question-heading p {
     color: #777777;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
-/* Hilangkan ilustrasi emoji */
 .question-illustration {
     display: none;
 }
 
-/* =========================
+/* ============================
    PILIHAN JAWABAN
-========================= */
+============================ */
 
 .answer-container {
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 12px;
 }
 
 .answer-option {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 
     width: 100%;
-    padding: 14px 16px;
+    min-height: 60px;
+    padding: 12px 14px;
 
     color: #333333;
     background: #ffffff;
@@ -408,11 +433,17 @@ body {
     border: 2px solid #e5e5e5;
     border-radius: 9px;
 
-    font-size: 16px;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.5;
     text-align: left;
 
+    overflow-wrap: anywhere;
+
     cursor: pointer;
-    transition: 0.2s;
+    transition:
+        background 0.2s,
+        border-color 0.2s;
 }
 
 .answer-option:hover:not(:disabled) {
@@ -425,20 +456,18 @@ body {
     align-items: center;
     justify-content: center;
 
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     flex-shrink: 0;
 
-    color: white;
+    color: #ffffff;
     background: #70c5d1;
 
     border-radius: 6px;
 
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
 }
-
-/* Warna huruf pilihan */
 
 .answer-option:nth-child(2) .answer-letter {
     background: #8b509e;
@@ -452,22 +481,16 @@ body {
     background: #e49c45;
 }
 
-/* Jawaban dipilih */
-
 .answer-option.selected {
     background: #f3f0f8;
     border-color: #8b509e;
 }
-
-/* Jawaban benar */
 
 .answer-option.correct {
     color: #278a3c;
     background: #f0faed;
     border-color: #70bd48;
 }
-
-/* Jawaban salah */
 
 .answer-option.wrong {
     color: #bd3443;
@@ -479,15 +502,17 @@ body {
     cursor: default;
 }
 
-/* =========================
-   INFORMASI JAWABAN
-========================= */
+/* ============================
+   FEEDBACK JAWABAN
+============================ */
 
 .feedback {
-    min-height: 25px;
-    margin-top: 15px;
+    min-height: 24px;
+    margin-top: 14px;
+
     font-size: 14px;
     font-weight: bold;
+    line-height: 1.5;
 }
 
 .feedback.success {
@@ -498,41 +523,46 @@ body {
     color: #d94352;
 }
 
-/* =========================
-   TOMBOL NAVIGASI
-========================= */
+/* ============================
+   NAVIGASI
+============================ */
 
 .navigation {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    gap: 12px;
 
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .previous-button,
 .next-button {
-    padding: 14px 23px;
+    min-height: 46px;
+    padding: 12px 18px;
 
     border-radius: 7px;
-    font-size: 15px;
+
+    font-family: inherit;
+    font-size: 14px;
     font-weight: bold;
 
     cursor: pointer;
-    transition: 0.2s;
+    transition: filter 0.2s;
 }
 
 .previous-button {
     color: #8b509e;
-    background: white;
+    background: #ffffff;
+
     border: 2px solid #8b509e;
 }
 
 .next-button {
-    color: white;
+    color: #ffffff;
     background: #60b8c7;
+
     border: none;
-    box-shadow: 0 4px 0 #438b98;
+    box-shadow: 0 3px 0 #438b98;
 }
 
 .previous-button:hover,
@@ -545,13 +575,13 @@ body {
     cursor: not-allowed;
 }
 
-/* =========================
+/* ============================
    HASIL AKHIR
-========================= */
+============================ */
 
 .result-card {
     text-align: center;
-    padding: 45px 35px;
+    padding-top: 40px;
 }
 
 .result-icon {
@@ -559,9 +589,10 @@ body {
 }
 
 .result-card > h1 {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+
     color: #333333;
-    font-size: 38px;
+    font-size: clamp(28px, 4vw, 38px);
 }
 
 .result-card > p {
@@ -571,11 +602,12 @@ body {
 
 .final-score {
     max-width: 400px;
-    margin: 30px auto;
-    padding: 25px;
+    margin: 25px auto;
+    padding: 24px;
 
     color: #333333;
     background: #f5fbfc;
+
     border: 1px solid #e0eeee;
     border-radius: 10px;
 }
@@ -587,78 +619,106 @@ body {
 
 .final-score h2 {
     margin: 10px 0;
+
     color: #70bd48;
-    font-size: 55px;
+    font-size: 50px;
 }
 
 .final-score p {
     color: #666666;
     font-size: 14px;
+    line-height: 1.5;
 }
 
 .result-details {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 15px;
+
+    margin-bottom: 25px;
 }
 
 .result-details div {
-    min-width: 140px;
-    padding: 18px;
+    min-width: 130px;
+    padding: 17px;
 
     background: #f3f9fa;
     border: 1px solid #e0eeee;
+
     border-radius: 8px;
 }
 
 .result-details span {
     color: #777777;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .result-details h3 {
-    margin-top: 10px;
-    color: #333333;
-    font-size: 25px;
+    margin-top: 8px;
+    font-size: 24px;
 }
 
 .result-card .next-button {
-    min-width: 200px;
+    min-width: 180px;
 }
 
 .hidden {
     display: none !important;
 }
 
-/* =========================
+/* ============================
    FOOTER
-========================= */
+============================ */
 
 footer {
-    padding: 20px 10px;
+    padding: 18px 8px;
+
     color: #ffffff;
     text-align: center;
+
     font-size: 12px;
+    line-height: 1.5;
 }
 
-/* =========================
-   RESPONSIVE TABLET
-========================= */
+/* =====================================
+   TABLET: LAYAR MAKSIMAL 900 PX
+===================================== */
 
 @media (max-width: 900px) {
     .app {
         grid-template-columns: 1fr;
+        gap: 18px;
         padding: 15px;
+    }
+
+    .sidebar {
+        padding: 18px;
+    }
+
+    .brand {
+        margin-bottom: 18px;
+    }
+
+    .score-card {
+        padding: 15px;
+        margin-bottom: 18px;
+    }
+
+    .score-card h1 {
+        font-size: 36px;
     }
 
     .question-list {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 15px;
     }
 
     .question-number {
         justify-content: center;
+        min-height: 38px;
+        padding: 8px;
     }
 
     .question-number .status-dot {
@@ -672,61 +732,307 @@ footer {
     .top-section {
         margin-top: 0;
     }
-}
-
-/* =========================
-   RESPONSIVE HP
-========================= */
-
-@media (max-width: 520px) {
-    .app {
-        padding: 10px;
-    }
-
-    .top-section {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 18px;
-    }
-
-    .timer {
-        width: 100%;
-    }
 
     .quiz-card,
     .result-card {
-        padding: 20px;
+        padding: 25px;
+    }
+}
+
+/* =====================================
+   HP: LAYAR MAKSIMAL 600 PX
+===================================== */
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .app {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        padding: 10px;
+    }
+
+    /* SIDEBAR LEBIH RINGKAS */
+
+    .sidebar {
+        padding: 15px;
+        border-radius: 9px;
+    }
+
+    .brand {
+        margin-bottom: 14px;
+    }
+
+    .brand h2 {
+        font-size: 19px;
+    }
+
+    .brand p {
+        font-size: 12px;
+    }
+
+    .score-card {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 4px 10px;
+
+        margin-bottom: 15px;
+        padding: 12px 15px;
+
+        text-align: left;
+    }
+
+    .score-card p {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .score-card h1 {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+
+        font-size: 29px;
+    }
+
+    .score-card span {
+        font-size: 11px;
+    }
+
+    .progress-info {
+        font-size: 12px;
+    }
+
+    .progress-bar {
+        margin-bottom: 16px;
+    }
+
+    .list-title {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .question-list {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .question-number {
+        min-height: 34px;
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .restart-button {
+        min-height: 40px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    /* HEADER HP */
+
+    .top-section {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+
+        padding: 15px;
+        margin-bottom: 14px;
+    }
+
+    .category {
+        font-size: 13px;
+    }
+
+    .timer {
+        justify-content: space-between;
+        padding: 10px 12px;
+    }
+
+    .timer small {
+        font-size: 11px;
+    }
+
+    .timer h2 {
+        font-size: 17px;
+    }
+
+    .step-progress {
+        margin-bottom: 14px;
+    }
+
+    /* KARTU SOAL */
+
+    .quiz-card,
+    .result-card {
+        padding: 18px 15px;
+        border-radius: 9px;
+    }
+
+    .question-label {
+        padding: 8px 12px;
+        margin-bottom: 17px;
+        font-size: 12px;
+    }
+
+    .question-heading {
+        margin-bottom: 20px;
     }
 
     .question-heading h1 {
-        font-size: 25px;
+        margin-bottom: 9px;
+        font-size: 23px;
+        line-height: 1.4;
+    }
+
+    .question-heading p {
+        font-size: 13px;
+    }
+
+    /* PILIHAN JAWABAN */
+
+    .answer-container {
+        gap: 10px;
     }
 
     .answer-option {
         gap: 10px;
-        padding: 11px;
-        font-size: 14px;
+
+        min-height: 54px;
+        padding: 10px;
+
+        border-width: 1px;
+        border-radius: 8px;
+
+        font-size: 13px;
+        line-height: 1.5;
     }
 
     .answer-letter {
-        width: 35px;
-        height: 35px;
+        width: 34px;
+        height: 34px;
+
+        font-size: 13px;
+        border-radius: 6px;
     }
 
+    .feedback {
+        margin-top: 12px;
+        font-size: 12px;
+    }
+
+    /* TOMBOL NAVIGASI */
+
     .navigation {
-        flex-direction: column-reverse;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+
+        margin-top: 20px;
     }
 
     .previous-button,
     .next-button {
         width: 100%;
+        min-width: 0;
+        min-height: 44px;
+
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+
+    /* HASIL QUIZ */
+
+    .result-card {
+        padding: 25px 15px;
     }
 
     .result-card > h1 {
-        font-size: 30px;
+        font-size: 28px;
+    }
+
+    .result-card > p {
+        font-size: 13px;
+    }
+
+    .final-score {
+        margin: 20px auto;
+        padding: 20px 12px;
+    }
+
+    .final-score h2 {
+        font-size: 43px;
     }
 
     .result-details {
-        flex-direction: column;
+        gap: 10px;
+    }
+
+    .result-details div {
+        flex: 1;
+        min-width: 0;
+        padding: 13px 7px;
+    }
+
+    .result-details span {
+        font-size: 11px;
+    }
+
+    .result-details h3 {
+        font-size: 22px;
+    }
+
+    .result-card .next-button {
+        min-width: 0;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 15px 5px;
+        font-size: 11px;
+    }
+}
+
+/* =====================================
+   HP KECIL: LAYAR MAKSIMAL 360 PX
+===================================== */
+
+@media (max-width: 360px) {
+    .app {
+        padding: 7px;
+    }
+
+    .quiz-card,
+    .result-card {
+        padding: 15px 11px;
+    }
+
+    .question-heading h1 {
+        font-size: 20px;
+    }
+
+    .answer-option {
+        gap: 8px;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .answer-letter {
+        width: 30px;
+        height: 30px;
+    }
+
+    .previous-button,
+    .next-button {
+        font-size: 11px;
+    }
+
+    .result-card > h1 {
+        font-size: 25px;
     }
 }
